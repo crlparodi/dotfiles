@@ -1,0 +1,147 @@
+conky.config = {
+ 
+    -- Set to yes if you want Conky to be forked in the background
+    background = true,
+ 
+    -- Use Xft?
+    use_xft = true,
+ 
+    --  xftfont Bitstream Vera Monospace Mono:size=9,--Xft font when Xft is enabled
+    --  xftfont Bitstream Monospace:size=9, --Xft font when Xft is enabled
+    -- Text alpha when using Xft
+    xftalpha = 1.0,
+ 
+    -- Update interval in seconds
+    update_interval = 1.0,
+ 
+    -- This is the number of times Conky will update before quitting (0 = infinite)
+    total_run_times = 0,
+ 
+    -- Create own Window?
+    own_window = true,
+
+    own_window_class = Conky,
+ 
+    -- Use "normal" to create own window instead of using desktop
+    own_window_type = 'override',
+ 
+    -- Own Window transparent?
+    own_window_transparent = true,
+ 
+    -- Own Window configuration
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+ 
+    -- Use double buffering
+    double_buffer = true,
+ 
+    -- Minimum width of text area
+    minimum_size  = 300,
+    maximum_width = 300,
+ 
+    -- Draw shades?
+    draw_shades = false,
+ 
+    -- Draw outlines?
+    draw_outline = false,
+ 
+    -- Draw borders around text
+    draw_borders = false,
+ 
+    -- Draw borders around graphs
+    draw_graph_borders = true,
+ 
+    -- Stippled borders?
+    -- stippled_borders = 8,
+ 
+    -- Border margins
+    -- border_margin = 4,
+ 
+    -- Border width
+    border_width = 1,
+ 
+    -- Default colors
+    default_color = 'white',
+ 
+    -- Default shade colors
+    default_shade_color = 'black',
+ 
+    -- Default outline colors
+    default_outline_color = 'white',
+ 
+    -- Conky Text Font
+    -- font = 'DejaVu Sans Mono:size=9',
+ 
+    -- Text alignment
+    alignment = 'top_right',
+ 
+    -- X gap between border of screen and text (same thing as passing -x at command line)
+    gap_x = 15,
+ 
+    -- Y gap between border of screen and text (same thing as passing -y at command line)
+    gap_y = 39,
+ 
+    -- Subtract file system buffers from used memory?
+    no_buffers = true,
+ 
+    -- Set to True if you want all text to be in uppercase
+    uppercase = false,
+   
+    -- Number of cpu samples to average. (set to 1 to disable averaging)
+    cpu_avg_samples = 2,
+ 
+    -- Number of net samples to average. (set to 1 to disable averaging)
+    net_avg_samples = 2,
+ 
+    -- Force UTF8? (Note that UTF8 support requires XFT)
+    override_utf8_locale = true,
+ 
+    -- Add spaces to keep things from moving about?  This only affects certain objects.
+    use_spacer = 'right',
+ 
+    -- Text buffer size
+    text_buffer_size = 2048
+ 
+}
+ 
+ 
+conky.text = [[ # STUFF AFTER THIS POINT WILL BE FORMATTED ON SCREEN!
+ 
+# SYSTEM DETAILS:
+${color}${font Monospace:style=Bold:pixelsize=18}$nodename ${hr 1 }
+${font Monospace:size=7}
+KERNEL: $alignr$sysname $kernel ($machine)
+UPTIME: $alignr$uptime
+RUNNING PROCESSES: ${alignr}$processes (${color orange}$running_processes Executing${color})
+ 
+# CPU USAGE:
+${color}${font Monospace:style=Bold:pixelsize=12}CPU USAGE:
+${font Monospace:style=Bold:pixelsize=8}
+CORE I:                         CORE II:${font Monospace:size=7}
+${freq}MHz / ${acpitemp}°C (${cpu cpu1}%)       ${freq}MHz / ${acpitemp}°C (${cpu cpu2}%)
+${color orange}${cpubar 5,120 cpu1}          ${color orange}${cpubar 5,120 cpu2}
+${color}${font Monospace:style=Bold:pixelsize=8}
+CORE III:                       CORE IV:${font Monospace:size=7}
+${freq}MHz / ${acpitemp}°C (${cpu cpu3}%)       ${freq}MHz / ${acpitemp}°C (${cpu cpu4}%)
+${color orange}${cpubar 5,120 cpu3}          ${color orange}${cpubar 5,120 cpu4}
+ 
+${color}1st ${color}${top name 1}${top cpu 1}%${alignr}  ${color}1st ${color}${top name 2}${top cpu 2}%
+ 
+# MEMORY USAGE:
+${color}${font Monospace:style=Bold:pixelsize=18}MEMORY USAGE ${hr 1 }
+${font Monospace:size=7}
+$mem / $memmax ($memperc%)
+${color orange}${membar 5,120}
+ 
+${color}1st ${color }${top_mem name 1}${top_mem mem 1}% ${alignr}${color}6th ${color}${top_mem name 6}${top_mem mem 6}%
+${color}2nd ${color}${top_mem name 2}${top_mem mem 2}% ${alignr}${color}7th ${color}${top_mem name 7}${top_mem mem 7}%
+${color}3rd ${color}${top_mem name 3}${top_mem mem 3}% ${alignr}${color}8th ${color}${top_mem name 8}${top_mem mem 8}%
+${color}4th ${color}${top_mem name 4}${top_mem mem 4}% ${alignr}${color}9th ${color}${top_mem name 9}${top_mem mem 9}%
+${color}5th ${color}${top_mem name 5}${top_mem mem 5}% ${alignr}${color}10th ${color}${top_mem name 10}${top_mem mem 10}%
+ 
+# HD USAGE:
+${color}${font Monospace:style=Bold:pixelsize=18}HD USAGE ${hr 1 }
+${font Monospace:size=7}
+${color}${font Monospace:style=Bold:pixelsize=12}ROOT:${font Monospace:style=Bold:size=7} ${alignr}${fs_used /}/${fs_size /}    (${fs_used_perc /}%)
+${alignr}${color orange}${color orange}${fs_bar 5,120 /}
+ 
+]]

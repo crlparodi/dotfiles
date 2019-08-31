@@ -1,0 +1,228 @@
+###################################################################################
+#			      i3 UI CONFIGURATION
+###################################################################################
+
+# Font for window titles. 
+font pango:FuraCode Nerd Font Semi-Bold 9
+
+# Remove title bar from window
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+
+# Gaps parameters
+gaps inner 5
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+# Window Border Configuration
+#                       border  backgr. text    indicator child_border
+client.focused          #1C1108 #1C1108 #FFFFFF #141A1B   #F79500
+client.focused_inactive #141A1B #141A1B #888888 #141A1B   #F79500
+client.unfocused        #3E3024 #3E3024 #888888 #3E3024   #1C1108
+client.urgent           #A20000 #A20000 #FFFFFF #141A1B   #A20000
+client.placeholder      #000000 #0c0c0c #dfdfdf #000000   #0c0c0c
+
+client.background       #FFFFFF
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+# set $ws8 "8"
+# set $ws9 "9"
+# set $ws10 "10"
+
+###################################################################################
+#                             I3 GESTURES CONFIG
+###################################################################################
+
+# Mod key
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+m focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move downm
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+m move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+# bindsym $mod+8 workspace $ws8
+# bindsym $mod+9 workspace $ws9
+# bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+# bindsym $mod+Shift+8 move container to workspace $ws8
+# bindsym $mod+Shift+9 move container to workspace $ws9
+# bindsym $mod+Shift+0 move container to workspace $ws10
+
+# switch between workspaces
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym Ctrl+Mod1+Right workspace next
+bindsym Ctrl+Mod1+Left workspace prev
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+###################################################################################
+#                             I3 APP CALL CONFIG
+###################################################################################
+
+assign[class="Firefox"] $ws2
+assign[class="Chromium"] $ws2
+assign[class="code-oss"] $ws3
+assign[class="code"] $ws3
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# start a file manager
+bindsym $mod+x exec pcmanfm
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec rofi -show run
+
+# take a screenshot
+bindsym Control+Print exec gnome-screenshot -i
+
+# randR display configuration
+set $displayMode "Set display mode [l]aptop [d]esktop [f]ull"
+bindsym $mod+p mode $displayMode 
+mode $displayMode {
+        bindsym l exec ~/.config/i3/i3_scrcfg.sh --laptop
+        bindsym d exec ~/.config/i3/i3_scrcfg.sh --desktop
+	bindsym f exec ~/.config/i3/i3_scrcfg.sh --full
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+n move workspace to output left
+
+# Set Backlight
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Set Volume
+#bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 2+ unmute"
+bindsym XF86AudioRaiseVolume exec "~/.config/dunst/volume_notify.sh up"
+# bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 2- unmute"
+bindsym XF86AudioLowerVolume exec "~/.config/dunst/volume_notify.sh down"
+# bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioMute exec "~/.config/dunst/volume_notify.sh toggle"
+
+# Set Microphone
+bindsym XF86AudioMicMute exec "amixer -M set Capture toggle"
+
+# Set lockscreen 
+bindsym $mod+shift+x exec dm-tool lock 
+
+###################################################################################
+#                             STARTUP CONFIG
+###################################################################################
+
+exec_always $HOME/.config/dunst/launch.sh
+exec_always xcompmgr
+exec_always udiskie
+exec_always $HOME/.config/polybar/launch.sh
+exec_always feh --bg-fill $HOME/Images/sunset_road.jpg
+exec_always $HOME/conky_launch.sh

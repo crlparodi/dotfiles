@@ -1,0 +1,3 @@
+rofi.theme:		sunset.rasi
+rofi.lines:		5
+rofi.hide-scrollbar:	true

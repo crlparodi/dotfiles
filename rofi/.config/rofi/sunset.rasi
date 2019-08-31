@@ -1,0 +1,147 @@
+/**
+ * ROFI Color theme
+ * User: cyril27
+ * Copyright: Cyril PARODI
+ */
+
+* {
+    foreground:                  rgba ( 243, 243, 243, 100 % );
+    background:                  rgba ( 0, 0, 0, 75% );
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    normal-foreground:           @foreground;
+    normal-background:           rgba ( 39, 40, 34, 0 % );
+    selected-normal-foreground:  rgba ( 255, 255, 128, 100 % );
+    selected-normal-background:  @background;
+    alternate-normal-foreground: @foreground;
+    alternate-normal-background: rgba ( 39, 40, 34, 0 % );
+    urgent-foreground:           rgba ( 249, 38, 114, 100 % );
+    urgent-background:           rgba ( 39, 40, 34, 0 % );
+    alternate-urgent-background: rgba ( 39, 40, 34, 0 % );
+    selected-urgent-foreground:  rgba ( 248, 248, 242, 100 % );
+    selected-urgent-background:  rgba ( 249, 38, 114, 100 % );
+    alternate-urgent-foreground: @urgent-foreground;
+    active-foreground:           rgba ( 166, 226, 42, 100 % );
+    active-background:           rgba ( 39, 40, 34, 0 % );
+    selected-active-foreground:  rgba ( 166, 226, 42, 100 % );
+    selected-active-background:  rgba ( 20, 20, 17, 100 % );
+    alternate-active-foreground: @active-foreground;
+    alternate-active-background: rgba ( 39, 40, 34, 0 % );
+    border-color:                @foreground;
+    spacing:                     2;
+    matcha-background:           rgba ( 20, 26, 27, 100%);
+    matcha-background-alt:       rgba ( 27, 34, 36, 100% );
+    matcha-lagoon:               rgba ( 46, 179, 152, 100%);
+	sunset-background:           rgba ( 28, 17, 8, 80%);
+	sunset-background-focused:	 rgba ( 107, 62, 0, 45%);
+    sunset-orange:               rgba ( 247, 149, 0, 100%);
+}
+#window {
+    background-color: @sunset-background;
+    border:           1;
+	border-color:	@sunset-orange;
+    padding:          20;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       1px 0px 0px ;
+    border-color: @foreground;
+    spacing:      2px ;
+    scrollbar:    true;
+    padding:      10px 0px 0px 0px ;
+}
+#element {
+    font:       "FuraCode Nerd Font 14";
+    border:  0;
+    padding: 1px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @sunset-background-focused;
+    text-color:       @sunset-orange;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px 0px 0px ;
+    border-color: @foreground;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    0px 0px 10px 0px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#entry {
+    font:       "FuraCode Nerd Font Bold 18";
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#prompt {
+    font:       "FuraCode Nerd Font 18";
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    font:       "FuraCode Nerd Font 18";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @normal-foreground;
+}
