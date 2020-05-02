@@ -5,11 +5,14 @@
 [colors]
 background = #000000
 
-foreground = #FFFFFF
+foreground = #a5a2a2
 
-;primary = #AAAAAA
-primary = #AAAAAA
 alert = #FF0000
+
+green = #01a252
+blue = #01a0e4
+yellow = #fded02
+red = #db2d20
 
 ;==========================================================
 	BAR
@@ -57,37 +60,6 @@ cursor-scroll = ns-resize
 separator = %{F#AAAAAA} | %{F-}
 
 ;==========================================================
-	i3 BAR
-;==========================================================
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-label-mode-padding = 0
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-label-focused = %name%
-label-focused-background = 
-label-focused-foreground = ${colors.foreground}
-label-focused-padding = 1.5
-
-label-unfocused = %name%
-label-unfocused-padding = 1.5
-label-unfocused-foreground = ${colors.foreground-dark}
-
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-padding = 1.5
-
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-;==========================================================
 	BSPWM BAR
 ;==========================================================
 
@@ -103,9 +75,8 @@ reverse-scroll = false
 label-empty-padding = 1
 
 label-focused-padding = 1
-label-focused-foreground = ${colors.foreground}
-label-focused-background = #3f3f3f
-label-focused-underline = ${colors.primary}
+label-focused-foreground = ${colors.red}
+label-focused-underline = ${colors.red}
 
 label-unfocused-padding = 1
 label-visible-padding = 1
@@ -135,6 +106,7 @@ type = internal/xbacklight
 format = <label>
 label = Dim: %percentage%
 label-padding = 1
+label-foreground = ${colors.yellow}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -156,6 +128,8 @@ format-connected-padding = 1
 format-disconnected = <label-disconnected>
 label-disconnected = NONE
 
+label-connected-foreground = ${colors.green}
+
 ;==========================================================
 	DATETIME
 ;==========================================================
@@ -167,6 +141,7 @@ date = "%a %d/%m"
 time = "%H:%M"
 label = %date% %time%
 label-padding = 1
+label-foreground = ${colors.red}
 
 ;==========================================================
 	ALSA AUDIO
@@ -183,6 +158,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 label-volume = Vol: %percentage%%
+label-volume-foreground = ${colors.blue}
 
 format-muted = <label-muted>
 format-muted-padding = 1
@@ -234,11 +210,3 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-
-;==========================================================
-	SEPARATOR
-;==========================================================
-
-[module/sep]
-
-separator = %{F#FF0000} | %{F-}
