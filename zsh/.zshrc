@@ -35,42 +35,14 @@ alias vim='nvim'
 alias status='git status --short'
 
 #-----------------------------------------------------------------
-#                      POWERLEVEL TWEAK
-#-----------------------------------------------------------------
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-
-POWERLEVEL9K_DIR_HOME_FOREGROUND="black"
-POWERLEVEL9K_DIR_HOME_BACKGROUND='cyan'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='cyan'
-POWERLEVEL9K_DIR_ETC_FOREGROUND="black"
-POWERLEVEL9K_DIR_ETC_BACKGROUND="white"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='red'
-
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='magenta'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='red'
-
-POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109  %m"
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv status dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-
-POWERLEVEL9K_STATUS_VERBOSE=false
-
-#-----------------------------------------------------------------
 #                           ZPLUG
 #-----------------------------------------------------------------
 
 source ~/.zplug/init.zsh
 
 # Powerlevel Theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug romkatv/powerlevel10k, as:theme, depth:1
 
 # Oh-My-Zsh Git plugin
 zplug "plugins/git", from:oh-my-zsh
@@ -90,3 +62,10 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+#-----------------------------------------------------------------
+#                      POWERLEVEL10K TWEAK
+#-----------------------------------------------------------------
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

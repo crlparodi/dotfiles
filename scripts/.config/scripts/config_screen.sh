@@ -1,7 +1,7 @@
 #!/bin/sh
 
-LAPTOP='eDP1'
-DESKTOP='HDMI1'
+LAPTOP='eDP-1'
+DESKTOP='HDMI-2'
 DISPATCH='right-of'
 
 case $1 in

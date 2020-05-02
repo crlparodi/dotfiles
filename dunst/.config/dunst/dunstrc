@@ -1,7 +1,7 @@
 [global]
 
 # Notification formatting
-font = FuraCode Nerd Font 10
+font = Quicksand Medium 11
 markup = yes
 plain_text = no
 format = "<b>%s</b>\n%b"
@@ -37,8 +37,8 @@ history_length = 15
 show_indicators = no
 
 # Padding & separators
-line_height = 3
-separator_height = 3
+line_height = 1
+separator_height = 1
 padding = 6
 horizontal_padding = 6
 separator_color = frame
@@ -48,19 +48,19 @@ startup_notification = false
 dmenu = /usr/bin/dmenu -p dunst:
 
 [urgency_low]
-frame_color = "#FFFFFF"
+frame_color = "#6F6F6F"
 foreground = "#FFFFFF"
-background = "#1C1108"
+background = "#000000"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#F79500"
+frame_color = "#FFFFFF"
 foreground = "#FFFFFF"
-background = "#1C1108"
+background = "#000000"
 timeout = 4
 
 [urgency_critical]
 frame_color = "#FF0000"
 foreground = "#FFFFFF"
-background = "#1C1108"
+background = "#000000"
 timeout = 8

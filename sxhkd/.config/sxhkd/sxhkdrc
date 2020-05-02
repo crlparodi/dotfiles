@@ -1,0 +1,97 @@
+################################################
+# PROGRAMS / FUNCTIONNALITIES
+################################################
+
+# TERMINAL
+super + Return
+	st
+
+# PROGRAM LAUNCHER
+super + @space
+	rofi -show run
+super + alt + @space
+	rofi -show drun
+
+# BACKLIGHT
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+# VOLUME
+XF86AudioRaiseVolume
+	~/.config/scripts/notify_volume.sh up
+XF86AudioLowerVolume
+	~/.config/scripts/notify_volume.sh down
+XF86AudioRaiseVolume + shift
+	~/.config/scripts/notify_volume.sh UP
+XF86AudioLowerVolume + shift 
+	~/.config/scripts/notify_volume.sh DOWN
+XF86AudioMute
+	~/.config/scripts/notify_volume.sh toggle
+
+################################################
+# SXHKD
+################################################
+
+#Reload sxhkd configuration
+super + Escape
+	pkill -USR1 -x sxhkd
+
+################################################
+# BSPWM / BSPC
+################################################
+
+# Here is the 1 to 9-0 combination in AZERTY keyboard, it's very tricky...
+# Also use xev (x11-utils) to et the corresponding key
+# {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+
+#focus in the iven direction
+super + {Left, Down, Up, Right}
+	bspc node --focus {west, south, north, east}
+
+super + ctrl + {Left, Down, Up, Right}
+	bspc node --swap {west, south, north, east}
+
+super + {Next, Prior}
+    bspc node -f {next, prev}.local
+
+#resize node/window
+super + alt + {Up, Down, Left, Right}
+	bspc node -z {top 0 -5, bottom 0 5, left -5 0, right 5 0}
+super + alt + shift + {Up, Down, Left, Right}
+	bspc node -z {top 0 -50, bottom 0 50, left -50 0, right 50 0}
+
+#move floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+#close window
+super + q
+	bspc node --close
+alt + F4
+	bspc node --close
+
+#kill process
+super + shift + q
+	bspc node -k 
+
+#make split ratios equal
+super + equal
+	bspc node @/ --equalize
+	
+#Focus selected workspace
+super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+    bspc desktop -f {1,2,3,4,5,6,7,8,9,10}
+    
+#Move to the next or previous workspace
+control + alt + {Left, Right}
+    bspc desktop --focus {prev, next}
+
+#Switch between the monocle and tiled layout
+super + m
+	bspc desktop -l next

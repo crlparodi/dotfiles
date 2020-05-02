@@ -1,9 +1,0 @@
-[zsh]
-https://github.com/zplug/zplug.git
-
-[neovim]
-https://github.com/vim-airline/vim-airline.git
-https://github.com/vim-airline/vim-airline-themes.git
-
-[themes]
-https://github.com/i-mint/midnight.git

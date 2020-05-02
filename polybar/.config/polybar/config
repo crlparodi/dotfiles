@@ -3,15 +3,13 @@
 ;==========================================================
 
 [colors]
-background = #001C1108
+background = #000000
 
 foreground = #FFFFFF
-foreground-dark = #878787
-foreground-light = #1C1108
 
-primary = #ffb52a
-secondary = #e60053
-alert = #A20000
+;primary = #AAAAAA
+primary = #AAAAAA
+alert = #FF0000
 
 ;==========================================================
 	BAR
@@ -42,12 +40,12 @@ padding-right = 0%
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = FuraCode Nerd Font:Bold:pixelsize=9;2
+font-0 = Quicksand Medium:Bold:pixelsize=9;2
 font-1 = FontAwesome:pixelsize=10;2
 
-modules-left = i3
+modules-left = bspwm
 modules-center =
-modules-right = xwindow alsa xbacklight battery wlan date 
+modules-right = xwindow separator alsa xbacklight battery wlan date 
 
 wm-restack = i3
 
@@ -55,6 +53,8 @@ override-redirect = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+separator = %{F#AAAAAA} | %{F-}
 
 ;==========================================================
 	i3 BAR
@@ -88,6 +88,30 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
 ;==========================================================
+	BSPWM BAR
+;==========================================================
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+
+label-empty-padding = 1
+
+label-focused-padding = 1
+label-focused-foreground = ${colors.foreground}
+label-focused-background = #3f3f3f
+label-focused-underline = ${colors.primary}
+
+label-unfocused-padding = 1
+label-visible-padding = 1
+label-occupied-padding = 1
+
+;==========================================================
 	XWINDOW
 ;==========================================================
 
@@ -98,8 +122,8 @@ format = <label>
 format-foreground = ${colors.foreground}
 
 label = %title%
-label-maxlen = 50
-label-padding = 1
+;label-maxlen = 50
+label-padding = 2
 
 ;==========================================================
 	BACKLIGHT
@@ -109,7 +133,7 @@ label-padding = 1
 type = internal/xbacklight
 
 format = <label>
-label =  %percentage%
+label = Dim: %percentage%
 label-padding = 1
 
 [module/backlight-acpi]
@@ -127,10 +151,10 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected =  %essid%
+label-connected = Net: %essid%
 format-connected-padding = 1
 format-disconnected = <label-disconnected>
-label-disconnected =  
+label-disconnected = NONE
 
 ;==========================================================
 	DATETIME
@@ -141,7 +165,7 @@ type = internal/date
 interval = 1
 date = "%a %d/%m"
 time = "%H:%M"
-label =  %date% %time%
+label = %date% %time%
 label-padding = 1
 
 ;==========================================================
@@ -158,11 +182,11 @@ format-volume-padding = 1
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-label-volume = %percentage%%
+label-volume = Vol: %percentage%%
 
 format-muted = <label-muted>
 format-muted-padding = 1
-label-muted =  OFF
+label-muted = Vol: Muted
 label-muted-foreground = #FFF
 
 ;==========================================================
@@ -210,3 +234,11 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
+
+;==========================================================
+	SEPARATOR
+;==========================================================
+
+[module/sep]
+
+separator = %{F#FF0000} | %{F-}

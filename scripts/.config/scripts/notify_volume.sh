@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # CONTROL_FILE='/tmp/volume-control.nid'
 
@@ -15,6 +15,12 @@ case $1 in
 		;;
 	"down")
 		amixer -q sset Master,0 2%- unmute
+		;;
+	"UP")
+		amixer -q sset Master,0 10%+ unmute
+		;;
+	"DOWN")
+		amixer -q sset Master,0 10%- unmute
 		;;
 	"toggle")
 		amixer set Master toggle
@@ -39,11 +45,12 @@ muted=`amixer -M get Master | tail -n1 | sed -E 's/.*\[([a-z]+)\]/\1/'`
 volume=`amixer -M get Master | tail -n1 | sed -E 's/.*\[([0-9]+)\%\].*/\1/'`
 bar=$(seq -s "─" $(($volume / 5)) | sed 's/[0-9]//g')
 
-if [[ $muted == "off" ]]; then
+if [[ "$muted" == "off" ]] 
+then
 	dunstify "Volume" -i audio-volume-muted-blocking -r 2593 -u normal "$muted"
 else
 	dunstify "Volume" -i audio-volume-muted-blocking -r 2593 -u normal "$volume%"
 fi
 
-echo $NID > $CONTROL_FILE
+# echo $NID > $CONTROL_FILE
 
