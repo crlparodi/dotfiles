@@ -1,5 +1,5 @@
 # DOTFILES
 
-Here are my personnal dotfiles for my actual ArchLinux Config.
+Dotfiles for my debian testing configuration.
 
-Installation via GNU Stow.
+Install w/ GNU Stow.
