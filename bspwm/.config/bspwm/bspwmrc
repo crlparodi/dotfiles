@@ -11,7 +11,10 @@ nitrogen --restore &
 
 # Tray Startup
 nm-applet &
-redshift-gtk & # Make a script to avoid multiple instances
+
+if [[ ! `pgrep redshift-gtk` ]]; then
+	redshift-gtk &
+fi
 
 # Monitors
 bspc monitor -d 1 2 3 4 5 6 7 8 9
