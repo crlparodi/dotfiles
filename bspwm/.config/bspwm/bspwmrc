@@ -5,9 +5,13 @@ setxkbmap -layout fr &
 
 # Startup
 nitrogen --restore &
-~/.config/scripts/launch_conky.sh
-~/.config/scripts/launch_dunst.sh
-~/.config/scripts/launch_polybar.sh
+~/.config/scripts/launch_conky.sh # To compact (?)
+~/.config/scripts/launch_dunst.sh # To compact (?)
+~/.config/scripts/launch_polybar.sh # To compact (?)
+
+# Tray Startup
+nm-applet &
+redshift-gtk & # Make a script to avoid multiple instances
 
 # Monitors
 bspc monitor -d 1 2 3 4 5 6 7 8 9

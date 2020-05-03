@@ -1,1 +1,2 @@
-rofi.theme: /usr/share/rofi/themes/gruvbox-dark-hard.rasi
+rofi.theme: base16-3024.rasi
+rofi.lines: 8
