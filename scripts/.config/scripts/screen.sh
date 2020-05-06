@@ -24,7 +24,7 @@ case $1 in
 		echo $DESKTOP is already off. Pass.
 	fi
 	xrandr --output $LAPTOP --auto --dpi 112
-	i3 restart
+	bspwm wm -r restart
 
 ;;
 
@@ -35,7 +35,7 @@ case $1 in
 		echo $LAPTOP is already off. Pass.
 	fi
 	xrandr --output $DESKTOP --auto --dpi 92
-	i3 restart
+	bspwm wm -r
 ;;
 
 --full | -f)
@@ -50,7 +50,7 @@ case $1 in
 		echo $LAPTOP is already activated. Pass.
 	fi
 	xrandr --output $DESKTOP --auto --dpi 92 --$DISPATCH $LAPTOP --auto --dpi 112
-	i3 restart
+	bspwm wm -r
 ;;
 
 esac

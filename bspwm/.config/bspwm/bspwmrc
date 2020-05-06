@@ -34,5 +34,5 @@ bspc config single_monocle				true
 bspc config remove_unplugged_monitors	true
 
 # Colors of bspwm
-bspc config focused_border_color    "#FFFFFF"
-bspc config normal_border_color		"#000000"
+bspc config focused_border_color    "#FAA41A"
+bspc config normal_border_color		"#242424"

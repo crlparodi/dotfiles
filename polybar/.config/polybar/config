@@ -16,15 +16,11 @@
 ;==========================================================
 
 [colors]
-background = #000000
 
-foreground = #a5a2a2
+background = #242424
+foreground = #FFFFFF
 
-white = #FFFFFF
-green = #01a252
-blue = #01a0e4
-yellow = #fded02
-red = #db2d20
+accent = #FAA41A
 
 ;==========================================================
 	BAR
@@ -58,9 +54,9 @@ module-margin-right = 0
 ;font-0 = Quicksand Medium:Bold:pixelsize=9;2
 font-0 = Overpass:Bold:pixelsize=9;1
 
-modules-left = bspwm
-modules-center =
-modules-right = xwindow separator alsa xbacklight battery wlan date 
+modules-left = bspwm xwindow
+modules-center = 
+modules-right = wlan alsa xbacklight battery date 
 
 wm-restack = bspwm
 
@@ -90,8 +86,8 @@ reverse-scroll = false
 label-empty-padding = 1
 
 label-focused-padding = 1
-label-focused-foreground = ${colors.red}
-label-focused-underline = ${colors.red}
+label-focused-foreground = ${colors.accent}
+label-focused-underline = ${colors.accent}
 
 label-unfocused-padding = 1
 label-visible-padding = 1
@@ -121,7 +117,7 @@ type = internal/xbacklight
 format = <label>
 label = Dim: %percentage%
 label-padding = 1
-label-foreground = ${colors.yellow}
+label-foreground = ${colors.accent}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -137,13 +133,15 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
+upspeed-minwitdh = 5
+
 format-connected = <label-connected>
-label-connected = Net: %essid%
+label-connected = Down: %downspeed% - Up: %upspeed% 
 format-connected-padding = 1
 format-disconnected = <label-disconnected>
 label-disconnected = NONE
 
-label-connected-foreground = ${colors.green}
+label-connected-foreground = ${colors.accent}
 
 ;==========================================================
 	DATETIME
@@ -156,7 +154,7 @@ date = "%a %d/%m"
 time = "%H:%M"
 label = %date% %time%
 label-padding = 1
-label-foreground = ${colors.red}
+label-foreground = ${colors.accent}
 
 ;==========================================================
 	AUDIO
@@ -173,12 +171,12 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 label-volume = Vol: %percentage%%
-label-volume-foreground = ${colors.blue}
+label-volume-foreground = ${colors.accent}
 
 format-muted = <label-muted>
 format-muted-padding = 1
 label-muted = Vol: Muted
-label-muted-foreground = ${colors.white}
+label-muted-foreground = ${colors.foreground}
 
 ;==========================================================
 	POWER SUPPLY
@@ -201,16 +199,16 @@ format-discharging-padding = 1
 format-full-padding = 1
 
 format-charging-prefix =
-format-charging-prefix-foreground = ${colors.white}
+format-charging-prefix-foreground = ${colors.foreground}
 format-charging = <label-charging>
 
 format-discharging-prefix = ${self.format-charging-prefix}
 format-discharging = <label-discharging>
-format-discharging-prefix-foreground = ${colors.green}
+format-discharging-prefix-foreground = ${colors.accent}
 
 format-full-prefix = ${self.format-charging-prefix}
 format-full = <label-full>
-format-full-prefix-foreground = ${colors.green}
+format-full-prefix-foreground = ${colors.accent}
 
 [settings]
 screenchange-reload = true

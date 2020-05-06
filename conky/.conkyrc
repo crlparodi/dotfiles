@@ -118,11 +118,11 @@ ${color}${font Monospace:style=Bold:pixelsize=12}CPU USAGE:
 ${font Monospace:style=Bold:pixelsize=8}
 CORE I:                         CORE II:${font Monospace:size=7}
 ${freq}MHz / ${acpitemp}°C (${cpu cpu1}%)       ${freq}MHz / ${acpitemp}°C (${cpu cpu2}%)
-${color #01a0e4}${cpubar 5,120 cpu1}          ${color #fded02}${cpubar 5,120 cpu2}
+${color #FAA41A}${cpubar 5,120 cpu1}          ${color #FAA41A}${cpubar 5,120 cpu2}
 ${color}${font Monospace:style=Bold:pixelsize=8}
 CORE III:                       CORE IV:${font Monospace:size=7}
 ${freq}MHz / ${acpitemp}°C (${cpu cpu3}%)       ${freq}MHz / ${acpitemp}°C (${cpu cpu4}%)
-${color #01a252}${cpubar 5,120 cpu3}          ${color #db2d20}${cpubar 5,120 cpu4}
+${color #FAA41A}${cpubar 5,120 cpu3}          ${color #FAA41A}${cpubar 5,120 cpu4}
  
 ${color}1st ${color}${top name 1}${top cpu 1}%${alignr}  ${color}1st ${color}${top name 2}${top cpu 2}%
  
@@ -130,7 +130,7 @@ ${color}1st ${color}${top name 1}${top cpu 1}%${alignr}  ${color}1st ${color}${t
 ${color}${font Monospace:style=Bold:pixelsize=18}MEMORY USAGE ${hr 1 }
 ${font Monospace:size=7}
 $mem / $memmax ($memperc%)
-${color #a5a2a2}${membar 5,120}
+${color #FAA41A}${membar 5,120}
  
 ${color}1st ${color }${top_mem name 1}${top_mem mem 1}% ${alignr}${color}6th ${color}${top_mem name 6}${top_mem mem 6}%
 ${color}2nd ${color}${top_mem name 2}${top_mem mem 2}% ${alignr}${color}7th ${color}${top_mem name 7}${top_mem mem 7}%
@@ -142,6 +142,6 @@ ${color}5th ${color}${top_mem name 5}${top_mem mem 5}% ${alignr}${color}10th ${c
 ${color}${font Monospace:style=Bold:pixelsize=18}HD USAGE ${hr 1 }
 ${font Monospace:size=7}
 ${color}${font Monospace:style=Bold:pixelsize=12}ROOT:${font Monospace:style=Bold:size=7} ${alignr}${fs_used /}/${fs_size /}    (${fs_used_perc /}%)
-${alignr}${color #a5a2a2}${fs_bar 5,120 /}
+${alignr}${color #FAA41A}${fs_bar 5,120 /}
  
 ]]
