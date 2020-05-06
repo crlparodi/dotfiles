@@ -1,3 +1,16 @@
+#
+# Y88b           .d8888b. Y88b   d88P 8888888b.          
+#  Y88b         d88P  Y88b Y88b d88P  888   Y88b         
+#   Y88b        888    888  Y88o88P   888    888         
+#    Y88b       888          Y888P    888   d88P         
+#    d88P       888           888     8888888P"          
+#   d88P        888    888    888     888                
+#  d88P         Y88b  d88P    888     888                
+# d88P           "Y8888P"     888     888       88888888 
+#
+# Author: Cyril PARODI   
+# https://github.com/crlparodi/dotfiles  
+
 ;==========================================================
 	COLORS
 ;==========================================================
@@ -7,8 +20,7 @@ background = #000000
 
 foreground = #a5a2a2
 
-alert = #FF0000
-
+white = #FFFFFF
 green = #01a252
 blue = #01a0e4
 yellow = #fded02
@@ -50,7 +62,7 @@ modules-left = bspwm
 modules-center =
 modules-right = xwindow separator alsa xbacklight battery wlan date 
 
-wm-restack = i3
+wm-restack = bspwm
 
 override-redirect = false
 
@@ -147,11 +159,11 @@ label-padding = 1
 label-foreground = ${colors.red}
 
 ;==========================================================
-	ALSA AUDIO
+	AUDIO
 ;==========================================================
 
 [module/alsa]
-type = internal/alsa
+type = internal/pulseaudio
 master-soundcard = hw:1
 mapped = true
 
@@ -166,7 +178,7 @@ label-volume-foreground = ${colors.blue}
 format-muted = <label-muted>
 format-muted-padding = 1
 label-muted = Vol: Muted
-label-muted-foreground = #FFF
+label-muted-foreground = ${colors.white}
 
 ;==========================================================
 	POWER SUPPLY
@@ -180,32 +192,25 @@ full-at = 99
 
 poll-interval = 1
 
-label-charging = %percentage%%
-label-discharging = %percentage%%
-label-full = %percentage%%
+label-charging = Bat: %percentage%%
+label-discharging = Bat: %percentage%%
+label-full = Bat: %percentage%%
 
 format-charging-padding = 1
 format-discharging-padding = 1
 format-full-padding = 1
 
 format-charging-prefix =
-format-charging-prefix-foreground = ${colors.foreground-alt}
-format-charging =  <label-charging>
+format-charging-prefix-foreground = ${colors.white}
+format-charging = <label-charging>
 
 format-discharging-prefix = ${self.format-charging-prefix}
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-prefix-foreground = ${colors.foreground-alt}
+format-discharging = <label-discharging>
+format-discharging-prefix-foreground = ${colors.green}
 
 format-full-prefix = ${self.format-charging-prefix}
-format-full =  <label-full>
-format-full-prefix-foreground = ${colors.foreground-alt}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
+format-full = <label-full>
+format-full-prefix-foreground = ${colors.green}
 
 [settings]
 screenchange-reload = true

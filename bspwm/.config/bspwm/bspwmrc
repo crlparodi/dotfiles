@@ -1,20 +1,23 @@
 #! /bin/sh
+#
+# Y88b           .d8888b. Y88b   d88P 8888888b.          
+#  Y88b         d88P  Y88b Y88b d88P  888   Y88b         
+#   Y88b        888    888  Y88o88P   888    888         
+#    Y88b       888          Y888P    888   d88P         
+#    d88P       888           888     8888888P"          
+#   d88P        888    888    888     888                
+#  d88P         Y88b  d88P    888     888                
+# d88P           "Y8888P"     888     888       88888888 
+#
+# Author: Cyril PARODI   
+# https://github.com/crlparodi/dotfiles  
 
+# Keymap and bindings
 sxhkd &
 setxkbmap -layout fr &
 
 # Startup
-nitrogen --restore &
-~/.config/scripts/launch_conky.sh # To compact (?)
-~/.config/scripts/launch_dunst.sh # To compact (?)
-~/.config/scripts/launch_polybar.sh # To compact (?)
-
-# Tray Startup
-nm-applet &
-
-if [[ ! `pgrep redshift-gtk` ]]; then
-	redshift-gtk &
-fi
+~/.config/scripts/startup.sh
 
 # Monitors
 bspc monitor -d 1 2 3 4 5 6 7 8 9

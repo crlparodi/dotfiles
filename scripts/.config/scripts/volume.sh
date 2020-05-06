@@ -1,13 +1,16 @@
 #!/bin/bash
-
-# CONTROL_FILE='/tmp/volume-control.nid'
-
-# if [ -e $CONTROL_FILE ]; then
-#	NID=`cat $CONTROL_FILE`
-# else
-#	NID=`notify-send "Volume" -t 500`
-#	echo $NID > $CONTROL_FILE
-# fi
+#
+# Y88b           .d8888b. Y88b   d88P 8888888b.          
+#  Y88b         d88P  Y88b Y88b d88P  888   Y88b         
+#   Y88b        888    888  Y88o88P   888    888         
+#    Y88b       888          Y888P    888   d88P         
+#    d88P       888           888     8888888P"          
+#   d88P        888    888    888     888                
+#  d88P         Y88b  d88P    888     888                
+# d88P           "Y8888P"     888     888       88888888 
+#
+# Author: Cyril PARODI   
+# https://github.com/crlparodi/dotfiles  
 
 case $1 in
 	"up")

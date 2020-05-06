@@ -1,3 +1,17 @@
+#
+# Y88b           .d8888b. Y88b   d88P 8888888b.          
+#  Y88b         d88P  Y88b Y88b d88P  888   Y88b         
+#   Y88b        888    888  Y88o88P   888    888         
+#    Y88b       888          Y888P    888   d88P         
+#    d88P       888           888     8888888P"          
+#   d88P        888    888    888     888                
+#  d88P         Y88b  d88P    888     888                
+# d88P           "Y8888P"     888     888       88888888 
+#
+# Author: Cyril PARODI   
+# https://github.com/crlparodi/dotfiles                            
+
+
 ################################################
 # PROGRAMS / FUNCTIONNALITIES
 ################################################
@@ -20,15 +34,19 @@ XF86MonBrightnessDown
 
 # VOLUME
 XF86AudioRaiseVolume
-	~/.config/scripts/notify_volume.sh up
+	~/.config/scripts/volume.sh up
 XF86AudioLowerVolume
-	~/.config/scripts/notify_volume.sh down
+	~/.config/scripts/volume.sh down
 XF86AudioRaiseVolume + shift
-	~/.config/scripts/notify_volume.sh UP
+	~/.config/scripts/volume.sh UP
 XF86AudioLowerVolume + shift 
-	~/.config/scripts/notify_volume.sh DOWN
+	~/.config/scripts/volume.sh DOWN
 XF86AudioMute
-	~/.config/scripts/notify_volume.sh toggle
+	~/.config/scripts/volume.sh toggle
+
+# LOCKSCREEN
+super + l
+	dm-tool lock
 
 ################################################
 # SXHKD
@@ -86,7 +104,14 @@ super + equal
 	
 #Focus selected workspace
 super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
-    bspc desktop -f {1,2,3,4,5,6,7,8,9,10}
+    bspc desktop -f {1,2,3,4,5,6,7,8,9}
+
+#Focus selected workspace
+super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+    id=$(bspc query --nodes --node); bspc node --to-desktop {1,2,3,4,5,6,7,8,9}; bspc desktop --focus {1,2,3,4?5,6,7,8,9}; bspc node --focus ${id}
+
+control + alt + {Next, Prior}
+	id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus next; bspc node --focus ${id}
     
 #Move to the next or previous workspace
 control + alt + {Left, Right}
