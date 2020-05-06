@@ -1,21 +1,28 @@
 /**
- * Base16 3024 ROFI Color theme
  *
- * Authors
- *  Scheme: Jan T. Sott (http://github.com/idleberg)
- *  Template: Jordi Pakey-Rodriguez (https://github.com/0xdec), Andrea Scarpino (https://github.com/ilpianista)
+ * Y88b           .d8888b. Y88b   d88P 8888888b.          
+ *  Y88b         d88P  Y88b Y88b d88P  888   Y88b         
+ *   Y88b        888    888  Y88o88P   888    888         
+ *    Y88b       888          Y888P    888   d88P         
+ *    d88P       888           888     8888888P"          
+ *   d88P        888    888    888     888                
+ *  d88P         Y88b  d88P    888     888                
+ * d88P           "Y8888P"     888     888       88888888 
+ *
+ * Author: Cyril PARODI   
+ * https://github.com/crlparodi/dotfiles  
  */
 
 * {
-    red:                         rgba ( 219, 45, 32, 100 % );
-    blue:                        rgba ( 1, 160, 228, 100 % );
-    lightfg:                     rgba ( 214, 213, 212, 100 % );
-    lightbg:                     rgba ( 58, 52, 50, 100 % );
-    foreground:                  rgba ( 165, 162, 162, 100 % );
-    background:                  rgba ( 9, 3, 0, 100 % );
-    background-color:            rgba ( 9, 3, 0, 0 % );
+    red:                         #db2d20;
+    blue:                        #01a0e4;
+    lightfg:                     #FAA41A;
+    lightbg:                     #111111;
+    foreground:                  #FFFFFF;
+    background:                  #242424;
+    background-color:            #242424;
     separatorcolor:              @foreground;
-    border-color:                @foreground;
+    border-color:                @lightfg;
     selected-normal-foreground:  @lightbg;
     selected-normal-background:  @lightfg;
     selected-active-foreground:  @background;
@@ -64,7 +71,7 @@ listview {
 element {
     border:           0;
     padding:          5px ;
-    font:             "Overpass Mono Regular 12";
+    font:             "Overpass Mono Regular 14";
 }
 element normal.normal {
     background-color: @normal-background;
@@ -134,17 +141,17 @@ case-indicator {
 entry {
     spacing:          0;
     text-color:       @normal-foreground;
-    font:             "Overpass Mono Bold 14";
+    font:             "Overpass Mono Bold 16";
 }
 prompt {
     spacing:          0;
     text-color:       @normal-foreground;
-    font:             "Overpass Mono Regular 14";
+    font:             "Overpass Mono Regular 16";
 }
 textbox-prompt-colon {
     expand:           false;
     str:              ":";
     margin:           0px 0.3000em 0.0000em 0.0000em ;
     text-color:       inherit;
-    font:             "Overpass Mono Regular 14";
+    font:             "Overpass Mono Regular 16";
 }

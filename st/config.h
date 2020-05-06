@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Overpass Mono:pixelsize=13:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Overpass Mono:pixelsize=16:antialias=true:autohint=true";
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -88,28 +88,28 @@ unsigned int tabspaces = 8;
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#090300", /* black   */
-  [1] = "#db2d20", /* red     */
-  [2] = "#01a252", /* green   */
-  [3] = "#fded02", /* yellow  */
-  [4] = "#01a0e4", /* blue    */
-  [5] = "#a16a94", /* magenta */
-  [6] = "#b5e4f4", /* cyan    */
-  [7] = "#a5a2a2", /* white   */
+  [0] = "#333333", /* black   */
+  [1] = "#ffee4a", /* red     */
+  [2] = "#ffc501", /* green   */
+  [3] = "#fe9600", /* yellow  */
+  [4] = "#43a0c7", /* blue    */
+  [5] = "#87314e", /* magenta */
+  [6] = "#46dcff", /* cyan    */
+  [7] = "#ffffff", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#5c5855", /* black   */
-  [9]  = "#db2d20", /* red     */
-  [10] = "#01a252", /* green   */
-  [11] = "#fded02", /* yellow  */
-  [12] = "#01a0e4", /* blue    */
-  [13] = "#a16a94", /* magenta */
-  [14] = "#b5e4f4", /* cyan    */
-  [15] = "#f7f7f7", /* white   */
+  [8]  = "#333333", /* black   */
+  [9]  = "#ffee4a", /* red     */
+  [10] = "#ffc501", /* green   */
+  [11] = "#fe9600", /* yellow  */
+  [12] = "#43a0c7", /* blue    */
+  [13] = "#87314e", /* magenta */
+  [14] = "#46dcff", /* cyan    */
+  [15] = "#ffffff", /* white   */
 
   /* special colors */
   [256] = "#242424", /* background */
-  [257] = "#a5a2a2", /* foreground */
+  [257] = "#FFFFFF", /* foreground */
 };
 
 /*
