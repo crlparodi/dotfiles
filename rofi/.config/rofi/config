@@ -1,2 +1,1 @@
-rofi.theme: cyp.rasi
-rofi.lines: 6
+rofi.theme: ./cyp.rasi
