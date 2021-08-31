@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="empty"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <value type="int" value="2"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=2648;y=13"/>
+      <property name="length" type="empty"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="empty"/>
+      <property name="length-adjust" type="empty"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="18"/>
+        <value type="int" value="22"/>
+        <value type="int" value="21"/>
+        <value type="int" value="5"/>
+        <value type="int" value="1"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="10"/>
+        <value type="int" value="19"/>
+        <value type="int" value="14"/>
+        <value type="int" value="11"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+      </property>
+      <property name="output-name" type="string" value="Primary"/>
+    </property>
+    <property name="panel-2" type="empty">
+      <property name="position" type="string" value="p=8;x=2648;y=1427"/>
+      <property name="size" type="uint" value="24"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="9"/>
+        <value type="int" value="15"/>
+        <value type="int" value="16"/>
+        <value type="int" value="17"/>
+      </property>
+      <property name="length" type="uint" value="100"/>
+      <property name="output-name" type="string" value="Primary"/>
+      <property name="position-locked" type="bool" value="true"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="netload"/>
+    <property name="plugin-2" type="empty">
+      <property name="style" type="empty"/>
+    </property>
+    <property name="plugin-3" type="empty"/>
+    <property name="plugin-4" type="empty">
+      <property name="flat-buttons" type="empty"/>
+      <property name="show-handle" type="empty"/>
+      <property name="grouping" type="empty"/>
+    </property>
+    <property name="plugin-5" type="empty">
+      <property name="expand" type="empty"/>
+      <property name="style" type="empty"/>
+    </property>
+    <property name="plugin-6" type="empty"/>
+    <property name="plugin-14" type="empty"/>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="digital-format" type="string" value="%d %b, %H:%M"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-7" type="string" value="pulseaudio">
+      <property name="show-frame" type="empty"/>
+      <property name="square-icons" type="empty"/>
+      <property name="icon-size" type="empty"/>
+      <property name="symbolic-icons" type="empty"/>
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="size-max" type="uint" value="16"/>
+      <property name="mpris-players" type="string" value="chromium.instance10841;chromium.instance11198;chromium.instance11345;chromium.instance11633;chromium.instance11677;chromium.instance12296;chromium.instance13581;chromium.instance1455;chromium.instance14722;chromium.instance15219;chromium.instance15637;chromium.instance17134;chromium.instance19548;chromium.instance20036;chromium.instance24248;chromium.instance2500;chromium.instance25222;chromium.instance25346;chromium.instance25653;chromium.instance26056;chromium.instance2623;chromium.instance2663;chromium.instance2844;chromium.instance3001;chromium.instance3451;chromium.instance4169;chromium.instance4262;chromium.instance5160;chromium.instance5885;chromium.instance6461;spotify;vlc;vlc.instance27571;vlc.instance27586"/>
+    </property>
+    <property name="plugin-15" type="string" value="tasklist">
+      <property name="menu-is-primary" type="empty"/>
+      <property name="square-icons" type="empty"/>
+      <property name="icon-size" type="empty"/>
+      <property name="symbolic-icons" type="empty"/>
+    </property>
+    <property name="plugin-8" type="string" value="power-manager-plugin"/>
+    <property name="plugin-9" type="string" value="showdesktop">
+      <property name="style" type="empty"/>
+    </property>
+    <property name="plugin-10" type="string" value="systray">
+      <property name="show-frame" type="empty"/>
+      <property name="digital-format" type="empty"/>
+      <property name="icon-size" type="int" value="16"/>
+      <property name="size-max" type="uint" value="16"/>
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="symbolic-icons" type="bool" value="true"/>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="syncthing"/>
+        <value type="string" value="vmware-tray"/>
+        <value type="string" value="scp-dbus-service.py"/>
+        <value type="string" value="syncthing-gtk"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="réseau"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="pgadmin4"/>
+        <value type="string" value="Microsoft Teams - Preview1"/>
+        <value type="string" value="discord1"/>
+        <value type="string" value="hp-systray"/>
+        <value type="string" value="qBittorrent"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="org.guido-berhoerster.code.package-update-indicator"/>
+        <value type="string" value="nm-applet"/>
+      </property>
+    </property>
+    <property name="plugin-11" type="empty">
+      <property name="style" type="empty"/>
+    </property>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="show-frame" type="bool" value="false"/>
+    </property>
+    <property name="plugin-16" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-17" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="false"/>
+    </property>
+    <property name="plugin-18" type="string" value="applicationsmenu">
+      <property name="button-title" type="string" value=" Menu"/>
+      <property name="button-icon" type="string" value="xfce4-button-opensuse"/>
+    </property>
+    <property name="plugin-19" type="string" value="xfce4-clipman-plugin"/>
+    <property name="plugin-21" type="string" value="places">
+      <property name="show-button-type" type="int" value="2"/>
+    </property>
+    <property name="plugin-22" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+  </property>
+</channel>

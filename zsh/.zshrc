@@ -16,23 +16,77 @@ bindkey "^[[F" end-of-line
 
 alias python=python3
 alias ls='ls --color=auto'
-alias ll='ls -l --color=auto'
-alias la='ls --color=auto -lahF'
+alias ll='ls -lht --color=auto'
+alias la='ls --color=auto -lahFt'
+
+# Replacement for ls
+alias lse='exa -ahl -G --sort=size --group-directories-first'
 
 # Viewing disk usage rapidly
 alias df='df -h'
 
 # Access Sticky Notes file
-alias tilt='nvim ~/Documents/volatile.txt'
+# alias tilt='nvim ~/Documents/volatile.txt'
+alias tilt='vim ~/Documents/volatile.txt'
 
 # Launch night mode
 alias redshift='xbacklight -set 1 && redshift -P -O 3000'
 
 # Launch neovim
-alias vim='nvim'
+# alias vim='nvim'
 
 # Alternative git status
 alias status='git status --short'
+
+# Wacom tablet configuration
+alias settab='xsetwacom set 23 MapToOutput DP-1'
+
+# Zypper aliases in OpenSUSE Configuration
+alias zypu='sudo zypper update'
+
+# Zypper functions for OpenSUSE Configuration
+zyprm() {
+    sudo zypper rm --clean-deps "$1"
+}
+zyp() {
+    sudo zypper install --details "$1"
+}
+
+#-----------------------------------------------------------------
+#                  POWERLEVEL9K OLD TWEAK
+#-----------------------------------------------------------------
+
+# POWERLEVEL9K_MODE='nerdfont-complete'
+
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+
+# POWERLEVEL9K_DIR_HOME_FOREGROUND="black"
+# POWERLEVEL9K_DIR_HOME_BACKGROUND='cyan'
+# POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
+# POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='cyan'
+# POWERLEVEL9K_DIR_ETC_FOREGROUND="black"
+# POWERLEVEL9K_DIR_ETC_BACKGROUND="white"
+# POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
+# POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='red'
+
+# POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='magenta'
+# POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='red'
+
+# POWERLEVEL9K_CONTEXT_TEMPLATE="\uF109  %m"
+
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv status dir vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+
+# POWERLEVEL9K_STATUS_VERBOSE=false
+
+#-----------------------------------------------------------------
+#                  POWERLEVEL10K CONFIGURATION
+#-----------------------------------------------------------------
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #-----------------------------------------------------------------
 #                           ZPLUG
@@ -40,9 +94,9 @@ alias status='git status --short'
 
 source ~/.zplug/init.zsh
 
-# Powerlevel Theme
+# Powerlevel Theme (9K is OLD - Use 10K instead)
 # zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug romkatv/powerlevel10k, as:theme, depth:1
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Oh-My-Zsh Git plugin
 zplug "plugins/git", from:oh-my-zsh
@@ -63,9 +117,21 @@ fi
 
 zplug load
 
+export PATH=~/.local/bin:$PATH
+
 #-----------------------------------------------------------------
-#                      POWERLEVEL10K TWEAK
+#                           SOURCES
 #-----------------------------------------------------------------
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source $HOME/.cargo/env
+
+#-----------------------------------------------------------------
+#                            PATHS
+#-----------------------------------------------------------------
+
+PATH=$PATH:/snap/bin
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=/home/cyril27/bin:$PATH
+
+export PATH="$HOME/.poetry/bin:$PATH"

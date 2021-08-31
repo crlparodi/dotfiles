@@ -1,0 +1,11 @@
+app=mypaint
+last_user=
+screenshot_dir=file:/home/palomino/Images/Screenshots
+action=1
+delay=0
+region=3
+show_mouse=0
+last_extension=png
+enable_imgur_upload=true
+show_border=1
+
