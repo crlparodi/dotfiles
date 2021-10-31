@@ -8,13 +8,14 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line 
+bindkey "^[[F" end-of-line
 
 #-----------------------------------------------------------------
 #                           ALIASES
 #-----------------------------------------------------------------
 
 alias python=python3
+
 alias ls='ls --color=auto'
 alias ll='ls -lht --color=auto'
 alias la='ls --color=auto -lahFt'
@@ -25,21 +26,19 @@ alias lse='exa -ahl -G --sort=size --group-directories-first'
 # Viewing disk usage rapidly
 alias df='df -h'
 
-# Access Sticky Notes file
-# alias tilt='nvim ~/Documents/volatile.txt'
-alias tilt='vim ~/Documents/volatile.txt'
-
 # Launch night mode
 alias redshift='xbacklight -set 1 && redshift -P -O 3000'
-
-# Launch neovim
-# alias vim='nvim'
 
 # Alternative git status
 alias status='git status --short'
 
 # Wacom tablet configuration
-alias settab='xsetwacom set 23 MapToOutput DP-1'
+settab() {
+    DEVICE=$(xsetwacom list | grep STYLUS | grep -E -o "id: [0-9]*" | cut -d' ' -f2)
+    if [[ ! -z ${DEVICE} ]]; then
+        xsetwacom set ${DEVICE} MapToOutput DP-1
+    fi
+}
 
 # Zypper aliases in OpenSUSE Configuration
 alias zypu='sudo zypper update'
@@ -92,16 +91,6 @@ zyp() {
 #                           ZPLUG
 #-----------------------------------------------------------------
 
-# Check install of Zplug
-ZPLUG_DIR="$HOME/.zplug"
-
-if [[ ! -d "${ZPLUG_DIR}" ]]; then
-    echo "Zplug, is not installed, proceeding to install..."
-    git clone -q https://github.com/zplug/zplug $ZPLUG_DIR
-    source ~/.zplug/init.zsh && zplug update
-fi
-
-# Launch Zplug init
 source ~/.zplug/init.zsh
 
 # Powerlevel Theme (9K is OLD - Use 10K instead)
@@ -127,8 +116,6 @@ fi
 
 zplug load
 
-export PATH=~/.local/bin:$PATH
-
 #-----------------------------------------------------------------
 #                           SOURCES
 #-----------------------------------------------------------------
@@ -141,7 +128,7 @@ export PATH=~/.local/bin:$PATH
 
 PATH=$PATH:/snap/bin
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=~/.local/bin:$PATH
 export PATH=/home/cyril27/bin:$PATH
-
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
