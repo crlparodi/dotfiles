@@ -91,6 +91,16 @@ zyp() {
 #                           ZPLUG
 #-----------------------------------------------------------------
 
+# Check install of Zplug
+ZPLUG_DIR="$HOME/.zplug"
+
+if [[ ! -d "${ZPLUG_DIR}" ]]; then
+    echo "Zplug, is not installed, proceeding to install..."
+    git clone -q https://github.com/zplug/zplug $ZPLUG_DIR
+    source ~/.zplug/init.zsh && zplug update
+fi
+
+# Launch Zplug init
 source ~/.zplug/init.zsh
 
 # Powerlevel Theme (9K is OLD - Use 10K instead)
