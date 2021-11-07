@@ -30,7 +30,8 @@ alias df='df -h'
 alias redshift='xbacklight -set 1 && redshift -P -O 3000'
 
 # Alternative git status
-alias status='git status --short'
+alias status='git status'
+alias gs='git status --short'
 
 # Wacom tablet configuration
 settab() {
