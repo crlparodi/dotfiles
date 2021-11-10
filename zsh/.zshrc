@@ -20,7 +20,7 @@ alias python=python3
 # Improved ls
 alias ls='exa --sort=size'
 alias ll='exa -lhG -snew --sort=size --group-directories-first'
-alias la='exa -lahFG -snew --sort=size -group-directories-first'
+alias la='exa -lahFG -snew --sort=size --group-directories-first'
 
 # Viewing disk usage rapidly
 alias df='df -h'
