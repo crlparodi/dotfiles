@@ -14,14 +14,13 @@ bindkey "^[[F" end-of-line
 #                           ALIASES
 #-----------------------------------------------------------------
 
+# Python aliases
 alias python=python3
 
-alias ls='ls --color=auto'
-alias ll='ls -lht --color=auto'
-alias la='ls --color=auto -lahFt'
-
-# Replacement for ls
-alias lse='exa -ahl -G --sort=size --group-directories-first'
+# Improved ls
+alias ls='exa --sort=size'
+alias ll='exa -lhG -snew --sort=size --group-directories-first'
+alias la='exa -lahFG -snew --sort=size -group-directories-first'
 
 # Viewing disk usage rapidly
 alias df='df -h'
